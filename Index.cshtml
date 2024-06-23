@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Uploaded Files";
+}
+
+<h2>Uploaded Files</h2>
+
+<ul>
+@foreach (var file in ViewBag.Files)
+{
+    var fileName = Path.GetFileName(file.ToString());
+    <li><a href="~/uploads/@fileName">@fileName</a></li>
+}
+</ul>
+
+<a href="/File/Upload">Upload Another File</a>
